@@ -26,7 +26,7 @@ SSL_METHOD = "simclr"
 DATASET_SSL_METHOD = "contrastive"
 
 
-DATA_DIR = "/kaggle/input/datasets/deepshiksharma/ptb-xl-100hz/ptb-xl_100hz"
+DATA_DIR = "/kaggle/input/datasets/deltasierra0/ptb-xl-100hz/ptb-xl_100hz"
 CACHE_DIR = "/kaggle/working/ptbxl_cache"
 OUT_ROOT = "/kaggle/working/torch_xresnet1d101_experiments"
 
