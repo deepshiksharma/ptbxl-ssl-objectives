@@ -46,7 +46,7 @@ class PTBXLCropDataset(Dataset):
         contrastive_shift_max=25,
         contrastive_time_mask_ratio=0.2,
         contrastive_time_mask_patch_size=25,
-        contrastive_lead_dropout_prob=0.15,
+        contrastive_lead_dropout_prob=0.15
     ):
         self.x = x
         self.y = y
@@ -122,10 +122,10 @@ class PTBXLCropDataset(Dataset):
         """
         crop: (12, 250)
 
-        Returns:
-            masked_crop: (12, 250)
-            clean_crop:  (12, 250)
-            loss_mask:   (1, 250), 1 where reconstruction loss is computed
+        returns:
+            - masked_crop: (12, 250)
+            - clean_crop:  (12, 250)
+            - loss_mask:   (1, 250), 1 where reconstruction loss is computed
         """
 
         clean_crop = crop.copy()
@@ -157,14 +157,14 @@ class PTBXLCropDataset(Dataset):
         """
         crop: (12, 250)
 
-        Returns:
-            noisy_crop:  (12, 250)
-            clean_crop:  (12, 250)
-            loss_mask:   (1, 250), all ones
+        returns:
+            - noisy_crop:  (12, 250)
+            - clean_crop:  (12, 250)
+            - loss_mask:   (1, 250), all ones
 
-        Denoising corruption:
-            1. Add Gaussian noise to every lead/timepoint.
-            2. Optionally drop entire leads by setting them to zero.
+        denoising corruption:
+            1. add Gaussian noise to every lead/timepoint.
+            2. optionally, drop entire leads by setting them to zero.
         """
 
         clean_crop = crop.copy()
@@ -190,7 +190,7 @@ class PTBXLCropDataset(Dataset):
 
     def _random_amplitude_scale(self, crop):
         """
-        Randomly scales the whole crop amplitude.
+        randomly scales the whole crop amplitude
 
         crop: (12, 250)
         """
@@ -207,7 +207,7 @@ class PTBXLCropDataset(Dataset):
 
     def _random_gaussian_noise(self, crop):
         """
-        Adds Gaussian noise to all leads/timepoints.
+        adds Gaussian noise to all leads/timepoints
 
         crop: (12, 250)
         """
@@ -225,7 +225,7 @@ class PTBXLCropDataset(Dataset):
 
     def _random_time_shift(self, crop):
         """
-        Randomly shifts the crop in time with zero fill.
+        randomly shifts the crop in time with zero fill
 
         crop: (12, 250)
         """
@@ -251,7 +251,7 @@ class PTBXLCropDataset(Dataset):
 
     def _random_time_mask(self, crop):
         """
-        Randomly zeros temporal patches.
+        randomly zeros temporal patches
 
         crop: (12, 250)
         """
@@ -288,7 +288,7 @@ class PTBXLCropDataset(Dataset):
 
     def _random_lead_dropout(self, crop):
         """
-        Randomly zeros entire leads.
+        randomly zeros entire leads
 
         crop: (12, 250)
         """
@@ -308,17 +308,17 @@ class PTBXLCropDataset(Dataset):
 
     def _apply_contrastive_augmentations(self, crop):
         """
-        Creates one augmented ECG view.
+        creates one augmented ECG view
 
         crop: (12, 250)
 
-        Returns:
+        returns:
             view: (12, 250)
         """
 
         view = crop.copy().astype(np.float32)
 
-        # Keep this order fixed for reproducibility/interpretability.
+        # keep this order fixed for reproducibility/interpretability.
         view = self._random_amplitude_scale(view)
         view = self._random_time_shift(view)
         view = self._random_gaussian_noise(view)
@@ -375,7 +375,7 @@ class PTBXLCropDataset(Dataset):
         raise RuntimeError("Invalid dataset mode")
 
 
-def load_ptbxl_raw100(data_dir, cache_dir="/kaggle/working/ptbxl_cache"):
+def load_ptbxl_raw100(data_dir, cache_dir="/kaggle/working"):
     data_dir = Path(data_dir)
     cache_dir = Path(cache_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)

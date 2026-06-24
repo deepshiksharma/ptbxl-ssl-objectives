@@ -203,7 +203,7 @@ def train_downstream(
 
         print(
             f"[{ssl_method} {finetune_mode} frac={fraction:.2f}] "
-            f"epoch {epoch:03d}/{epochs} "
+            f"epoch {epoch}/{epochs} "
             f"loss={train_loss:.5f} "
             f"val_auc={val_auc:.5f} "
             f"best={best_val_auc:.5f}"

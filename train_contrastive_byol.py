@@ -1,5 +1,4 @@
 import sys, json
-from pathlib import Path
 import numpy as np
 import pandas as pd
 import torch
@@ -26,9 +25,7 @@ SSL_METHOD = "byol"
 DATASET_SSL_METHOD = "contrastive"
 
 
-DATA_DIR = "/kaggle/input/datasets/deepshiksharma/ptb-xl-100hz/ptb-xl_100hz"
-CACHE_DIR = "/kaggle/working/ptbxl_cache"
-OUT_ROOT = "/kaggle/working/torch_xresnet1d101_experiments"
+DATA_DIR = "/kaggle/input/datasets/deltasierra0/ptb-xl-100hz/ptb-xl_100hz"
 
 TASK = "diagnostic"
 
@@ -67,7 +64,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 set_seed(SEED)
 
-OUT_DIR = Path(OUT_ROOT) / f"ssl_{SSL_METHOD}_seed{SEED}"
+OUT_DIR = f"{SSL_METHOD}_seed{SEED}"
 PRETRAIN_DIR = OUT_DIR / "pretrain"
 FULL_DIR = OUT_DIR / "finetune_full"
 HEAD_DIR = OUT_DIR / "finetune_head"
@@ -84,7 +81,6 @@ config = {
     "dataset_ssl_method": DATASET_SSL_METHOD,
     "seed": SEED,
     "data_dir": DATA_DIR,
-    "cache_dir": CACHE_DIR,
     "task": TASK,
     "input_size": INPUT_SIZE,
     "stride": STRIDE,
@@ -99,7 +95,7 @@ config = {
     "head_only_lr": HEAD_ONLY_LR,
     "finetune_weight_decay": FINETUNE_WEIGHT_DECAY,
     "label_fractions": LABEL_FRACTIONS,
-    "device": str(DEVICE),
+    "device": str(DEVICE)
 }
 
 with open(CONFIG_PATH, "w") as f:
@@ -111,7 +107,7 @@ print("device:", DEVICE)
 print("out_dir:", OUT_DIR)
 
 
-x, db = load_ptbxl_raw100(DATA_DIR, cache_dir=CACHE_DIR)
+x, db = load_ptbxl_raw100(DATA_DIR)
 y, label_names = get_labels(DATA_DIR, db, task=TASK)
 
 x_train_full, y_train_full, x_val, y_val, x_test, y_test = split_by_fold(x, y, db)
