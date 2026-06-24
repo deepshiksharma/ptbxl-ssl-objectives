@@ -1,4 +1,5 @@
 import sys, json
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import torch
@@ -64,7 +65,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 set_seed(SEED)
 
-OUT_DIR = f"{SSL_METHOD}_seed{SEED}"
+OUT_DIR = Path(f"{SSL_METHOD}_seed{SEED}")
 PRETRAIN_DIR = OUT_DIR / "pretrain"
 FULL_DIR = OUT_DIR / "finetune_full"
 HEAD_DIR = OUT_DIR / "finetune_head"
