@@ -1,0 +1,324 @@
+(D:\conda_envs\ssl) D:\windows libraries\Downloads\ptbxl-ssl-objectives>python train_baseline.py 22
+method: baseline
+seed: 22
+device: cuda
+out_dir: baseline_seed22
+x: (21837, 1000, 12)
+y: (21837, 44)
+train: (17441, 1000, 12) (17441, 44)
+val: (2193, 1000, 12) (2193, 44)
+test: (2203, 1000, 12) (2203, 44)
+num_classes: 44
+[baseline full frac=0.01] epoch 1/50 loss=1.02469 val_auc=0.51355 best=0.51355
+[baseline full frac=0.01] epoch 2/50 loss=0.99718 val_auc=0.53790 best=0.53790
+[baseline full frac=0.01] epoch 3/50 loss=0.97008 val_auc=0.52664 best=0.53790
+[baseline full frac=0.01] epoch 4/50 loss=0.95411 val_auc=0.52878 best=0.53790
+[baseline full frac=0.01] epoch 5/50 loss=0.90870 val_auc=0.53243 best=0.53790
+[baseline full frac=0.01] epoch 6/50 loss=0.88361 val_auc=0.54382 best=0.54382
+[baseline full frac=0.01] epoch 7/50 loss=0.87446 val_auc=0.53992 best=0.54382
+[baseline full frac=0.01] epoch 8/50 loss=0.84067 val_auc=0.53660 best=0.54382
+[baseline full frac=0.01] epoch 9/50 loss=0.80411 val_auc=0.53237 best=0.54382
+[baseline full frac=0.01] epoch 10/50 loss=0.77225 val_auc=0.51077 best=0.54382
+[baseline full frac=0.01] epoch 11/50 loss=0.72267 val_auc=0.51909 best=0.54382
+[baseline full frac=0.01] epoch 12/50 loss=0.68425 val_auc=0.52063 best=0.54382
+[baseline full frac=0.01] epoch 13/50 loss=0.65563 val_auc=0.52113 best=0.54382
+[baseline full frac=0.01] epoch 14/50 loss=0.60654 val_auc=0.49673 best=0.54382
+[baseline full frac=0.01] epoch 15/50 loss=0.50768 val_auc=0.49176 best=0.54382
+[baseline full frac=0.01] epoch 16/50 loss=0.47143 val_auc=0.49891 best=0.54382
+[baseline full frac=0.01] epoch 17/50 loss=0.40630 val_auc=0.52356 best=0.54382
+[baseline full frac=0.01] epoch 18/50 loss=0.34100 val_auc=0.51474 best=0.54382
+[baseline full frac=0.01] epoch 19/50 loss=0.28480 val_auc=0.49837 best=0.54382
+[baseline full frac=0.01] epoch 20/50 loss=0.20230 val_auc=0.49078 best=0.54382
+[baseline full frac=0.01] epoch 21/50 loss=0.17589 val_auc=0.48439 best=0.54382
+[baseline full frac=0.01] epoch 22/50 loss=0.16282 val_auc=0.47717 best=0.54382
+[baseline full frac=0.01] epoch 23/50 loss=0.13605 val_auc=0.49714 best=0.54382
+[baseline full frac=0.01] epoch 24/50 loss=0.12741 val_auc=0.50501 best=0.54382
+[baseline full frac=0.01] epoch 25/50 loss=0.12973 val_auc=0.51061 best=0.54382
+[baseline full frac=0.01] epoch 26/50 loss=0.11412 val_auc=0.52054 best=0.54382
+[baseline full frac=0.01] epoch 27/50 loss=0.11375 val_auc=0.53980 best=0.54382
+[baseline full frac=0.01] epoch 28/50 loss=0.10873 val_auc=0.56179 best=0.56179
+[baseline full frac=0.01] epoch 29/50 loss=0.10214 val_auc=0.57922 best=0.57922
+[baseline full frac=0.01] epoch 30/50 loss=0.09912 val_auc=0.58877 best=0.58877
+[baseline full frac=0.01] epoch 31/50 loss=0.09991 val_auc=0.59879 best=0.59879
+[baseline full frac=0.01] epoch 32/50 loss=0.09862 val_auc=0.61025 best=0.61025
+[baseline full frac=0.01] epoch 33/50 loss=0.09697 val_auc=0.61414 best=0.61414
+[baseline full frac=0.01] epoch 34/50 loss=0.10033 val_auc=0.61866 best=0.61866
+[baseline full frac=0.01] epoch 35/50 loss=0.10201 val_auc=0.62073 best=0.62073
+[baseline full frac=0.01] epoch 36/50 loss=0.09208 val_auc=0.62774 best=0.62774
+[baseline full frac=0.01] epoch 37/50 loss=0.10472 val_auc=0.63097 best=0.63097
+[baseline full frac=0.01] epoch 38/50 loss=0.10010 val_auc=0.63206 best=0.63206
+[baseline full frac=0.01] epoch 39/50 loss=0.09255 val_auc=0.63534 best=0.63534
+[baseline full frac=0.01] epoch 40/50 loss=0.09399 val_auc=0.63723 best=0.63723
+[baseline full frac=0.01] epoch 41/50 loss=0.09092 val_auc=0.64246 best=0.64246
+[baseline full frac=0.01] epoch 42/50 loss=0.08979 val_auc=0.64505 best=0.64505
+[baseline full frac=0.01] epoch 43/50 loss=0.08918 val_auc=0.64668 best=0.64668
+[baseline full frac=0.01] epoch 44/50 loss=0.08790 val_auc=0.65004 best=0.65004
+[baseline full frac=0.01] epoch 45/50 loss=0.08876 val_auc=0.65188 best=0.65188
+[baseline full frac=0.01] epoch 46/50 loss=0.08744 val_auc=0.65202 best=0.65202
+[baseline full frac=0.01] epoch 47/50 loss=0.08880 val_auc=0.65366 best=0.65366
+[baseline full frac=0.01] epoch 48/50 loss=0.08908 val_auc=0.65412 best=0.65412
+[baseline full frac=0.01] epoch 49/50 loss=0.08749 val_auc=0.65517 best=0.65517
+[baseline full frac=0.01] epoch 50/50 loss=0.09389 val_auc=0.65465 best=0.65517
+[baseline full frac=0.05] epoch 1/50 loss=0.97670 val_auc=0.52906 best=0.52906
+[baseline full frac=0.05] epoch 2/50 loss=0.91904 val_auc=0.54791 best=0.54791
+[baseline full frac=0.05] epoch 3/50 loss=0.86190 val_auc=0.51059 best=0.54791
+[baseline full frac=0.05] epoch 4/50 loss=0.82239 val_auc=0.53652 best=0.54791
+[baseline full frac=0.05] epoch 5/50 loss=0.77092 val_auc=0.54591 best=0.54791
+[baseline full frac=0.05] epoch 6/50 loss=0.72292 val_auc=0.54411 best=0.54791
+[baseline full frac=0.05] epoch 7/50 loss=0.66457 val_auc=0.52444 best=0.54791
+[baseline full frac=0.05] epoch 8/50 loss=0.55917 val_auc=0.53788 best=0.54791
+[baseline full frac=0.05] epoch 9/50 loss=0.39891 val_auc=0.57350 best=0.57350
+[baseline full frac=0.05] epoch 10/50 loss=0.24759 val_auc=0.56086 best=0.57350
+[baseline full frac=0.05] epoch 11/50 loss=0.15042 val_auc=0.60008 best=0.60008
+[baseline full frac=0.05] epoch 12/50 loss=0.12026 val_auc=0.63931 best=0.63931
+[baseline full frac=0.05] epoch 13/50 loss=0.12028 val_auc=0.61849 best=0.63931
+[baseline full frac=0.05] epoch 14/50 loss=0.11264 val_auc=0.67252 best=0.67252
+[baseline full frac=0.05] epoch 15/50 loss=0.10744 val_auc=0.63282 best=0.67252
+[baseline full frac=0.05] epoch 16/50 loss=0.09687 val_auc=0.69679 best=0.69679
+[baseline full frac=0.05] epoch 17/50 loss=0.09678 val_auc=0.73189 best=0.73189
+[baseline full frac=0.05] epoch 18/50 loss=0.09772 val_auc=0.75110 best=0.75110
+[baseline full frac=0.05] epoch 19/50 loss=0.09273 val_auc=0.74504 best=0.75110
+[baseline full frac=0.05] epoch 20/50 loss=0.09030 val_auc=0.74955 best=0.75110
+[baseline full frac=0.05] epoch 21/50 loss=0.09085 val_auc=0.75416 best=0.75416
+[baseline full frac=0.05] epoch 22/50 loss=0.08951 val_auc=0.75512 best=0.75512
+[baseline full frac=0.05] epoch 23/50 loss=0.09220 val_auc=0.75834 best=0.75834
+[baseline full frac=0.05] epoch 24/50 loss=0.08671 val_auc=0.76931 best=0.76931
+[baseline full frac=0.05] epoch 25/50 loss=0.09226 val_auc=0.75990 best=0.76931
+[baseline full frac=0.05] epoch 26/50 loss=0.08218 val_auc=0.75317 best=0.76931
+[baseline full frac=0.05] epoch 27/50 loss=0.08217 val_auc=0.77452 best=0.77452
+[baseline full frac=0.05] epoch 28/50 loss=0.08326 val_auc=0.77412 best=0.77452
+[baseline full frac=0.05] epoch 29/50 loss=0.08034 val_auc=0.78474 best=0.78474
+[baseline full frac=0.05] epoch 30/50 loss=0.07952 val_auc=0.78062 best=0.78474
+[baseline full frac=0.05] epoch 31/50 loss=0.07859 val_auc=0.78487 best=0.78487
+[baseline full frac=0.05] epoch 32/50 loss=0.07695 val_auc=0.77615 best=0.78487
+[baseline full frac=0.05] epoch 33/50 loss=0.07426 val_auc=0.78029 best=0.78487
+[baseline full frac=0.05] epoch 34/50 loss=0.07669 val_auc=0.76151 best=0.78487
+[baseline full frac=0.05] epoch 35/50 loss=0.07553 val_auc=0.77352 best=0.78487
+[baseline full frac=0.05] epoch 36/50 loss=0.07535 val_auc=0.77806 best=0.78487
+[baseline full frac=0.05] epoch 37/50 loss=0.07222 val_auc=0.78195 best=0.78487
+[baseline full frac=0.05] epoch 38/50 loss=0.07143 val_auc=0.77207 best=0.78487
+[baseline full frac=0.05] epoch 39/50 loss=0.07303 val_auc=0.78500 best=0.78500
+[baseline full frac=0.05] epoch 40/50 loss=0.07036 val_auc=0.78609 best=0.78609
+[baseline full frac=0.05] epoch 41/50 loss=0.07171 val_auc=0.78367 best=0.78609
+[baseline full frac=0.05] epoch 42/50 loss=0.07179 val_auc=0.78319 best=0.78609
+[baseline full frac=0.05] epoch 43/50 loss=0.06925 val_auc=0.78497 best=0.78609
+[baseline full frac=0.05] epoch 44/50 loss=0.06843 val_auc=0.78231 best=0.78609
+[baseline full frac=0.05] epoch 45/50 loss=0.06875 val_auc=0.78195 best=0.78609
+[baseline full frac=0.05] epoch 46/50 loss=0.07170 val_auc=0.78295 best=0.78609
+[baseline full frac=0.05] epoch 47/50 loss=0.06893 val_auc=0.78222 best=0.78609
+[baseline full frac=0.05] epoch 48/50 loss=0.06850 val_auc=0.78242 best=0.78609
+[baseline full frac=0.05] epoch 49/50 loss=0.06960 val_auc=0.78342 best=0.78609
+[baseline full frac=0.05] epoch 50/50 loss=0.06721 val_auc=0.78287 best=0.78609
+[baseline full frac=0.10] epoch 1/50 loss=0.96050 val_auc=0.55522 best=0.55522
+[baseline full frac=0.10] epoch 2/50 loss=0.87056 val_auc=0.54864 best=0.55522
+[baseline full frac=0.10] epoch 3/50 loss=0.79795 val_auc=0.58749 best=0.58749
+[baseline full frac=0.10] epoch 4/50 loss=0.74610 val_auc=0.57818 best=0.58749
+[baseline full frac=0.10] epoch 5/50 loss=0.66312 val_auc=0.54040 best=0.58749
+[baseline full frac=0.10] epoch 6/50 loss=0.53542 val_auc=0.55595 best=0.58749
+[baseline full frac=0.10] epoch 7/50 loss=0.32256 val_auc=0.58083 best=0.58749
+[baseline full frac=0.10] epoch 8/50 loss=0.15936 val_auc=0.64549 best=0.64549
+[baseline full frac=0.10] epoch 9/50 loss=0.11213 val_auc=0.65740 best=0.65740
+[baseline full frac=0.10] epoch 10/50 loss=0.10080 val_auc=0.70168 best=0.70168
+[baseline full frac=0.10] epoch 11/50 loss=0.09921 val_auc=0.74453 best=0.74453
+[baseline full frac=0.10] epoch 12/50 loss=0.10076 val_auc=0.72781 best=0.74453
+[baseline full frac=0.10] epoch 13/50 loss=0.10014 val_auc=0.75307 best=0.75307
+[baseline full frac=0.10] epoch 14/50 loss=0.09609 val_auc=0.69727 best=0.75307
+[baseline full frac=0.10] epoch 15/50 loss=0.09898 val_auc=0.71151 best=0.75307
+[baseline full frac=0.10] epoch 16/50 loss=0.09257 val_auc=0.78051 best=0.78051
+[baseline full frac=0.10] epoch 17/50 loss=0.08846 val_auc=0.78148 best=0.78148
+[baseline full frac=0.10] epoch 18/50 loss=0.08575 val_auc=0.81260 best=0.81260
+[baseline full frac=0.10] epoch 19/50 loss=0.08406 val_auc=0.80871 best=0.81260
+[baseline full frac=0.10] epoch 20/50 loss=0.08171 val_auc=0.79791 best=0.81260
+[baseline full frac=0.10] epoch 21/50 loss=0.08263 val_auc=0.81930 best=0.81930
+[baseline full frac=0.10] epoch 22/50 loss=0.07964 val_auc=0.80057 best=0.81930
+[baseline full frac=0.10] epoch 23/50 loss=0.08044 val_auc=0.81596 best=0.81930
+[baseline full frac=0.10] epoch 24/50 loss=0.07905 val_auc=0.81590 best=0.81930
+[baseline full frac=0.10] epoch 25/50 loss=0.07662 val_auc=0.81590 best=0.81930
+[baseline full frac=0.10] epoch 26/50 loss=0.07585 val_auc=0.82622 best=0.82622
+[baseline full frac=0.10] epoch 27/50 loss=0.07244 val_auc=0.82037 best=0.82622
+[baseline full frac=0.10] epoch 28/50 loss=0.07318 val_auc=0.81877 best=0.82622
+[baseline full frac=0.10] epoch 29/50 loss=0.07074 val_auc=0.82711 best=0.82711
+[baseline full frac=0.10] epoch 30/50 loss=0.06988 val_auc=0.82736 best=0.82736
+[baseline full frac=0.10] epoch 31/50 loss=0.06989 val_auc=0.82361 best=0.82736
+[baseline full frac=0.10] epoch 32/50 loss=0.06989 val_auc=0.83030 best=0.83030
+[baseline full frac=0.10] epoch 33/50 loss=0.06926 val_auc=0.82041 best=0.83030
+[baseline full frac=0.10] epoch 34/50 loss=0.06829 val_auc=0.83440 best=0.83440
+[baseline full frac=0.10] epoch 35/50 loss=0.06530 val_auc=0.82836 best=0.83440
+[baseline full frac=0.10] epoch 36/50 loss=0.06393 val_auc=0.83051 best=0.83440
+[baseline full frac=0.10] epoch 37/50 loss=0.06466 val_auc=0.82833 best=0.83440
+[baseline full frac=0.10] epoch 38/50 loss=0.06510 val_auc=0.82149 best=0.83440
+[baseline full frac=0.10] epoch 39/50 loss=0.06187 val_auc=0.82425 best=0.83440
+[baseline full frac=0.10] epoch 40/50 loss=0.06225 val_auc=0.82032 best=0.83440
+[baseline full frac=0.10] epoch 41/50 loss=0.06113 val_auc=0.82679 best=0.83440
+[baseline full frac=0.10] epoch 42/50 loss=0.06257 val_auc=0.82444 best=0.83440
+[baseline full frac=0.10] epoch 43/50 loss=0.06060 val_auc=0.82045 best=0.83440
+[baseline full frac=0.10] epoch 44/50 loss=0.05964 val_auc=0.82095 best=0.83440
+[baseline full frac=0.10] epoch 45/50 loss=0.05953 val_auc=0.82029 best=0.83440
+[baseline full frac=0.10] epoch 46/50 loss=0.05826 val_auc=0.81754 best=0.83440
+[baseline full frac=0.10] epoch 47/50 loss=0.05731 val_auc=0.81906 best=0.83440
+[baseline full frac=0.10] epoch 48/50 loss=0.05843 val_auc=0.81935 best=0.83440
+[baseline full frac=0.10] epoch 49/50 loss=0.05721 val_auc=0.81761 best=0.83440
+[baseline full frac=0.10] epoch 50/50 loss=0.05750 val_auc=0.81968 best=0.83440
+[baseline full frac=0.25] epoch 1/50 loss=0.92470 val_auc=0.55977 best=0.55977
+[baseline full frac=0.25] epoch 2/50 loss=0.80465 val_auc=0.55313 best=0.55977
+[baseline full frac=0.25] epoch 3/50 loss=0.71597 val_auc=0.53603 best=0.55977
+[baseline full frac=0.25] epoch 4/50 loss=0.56401 val_auc=0.57231 best=0.57231
+[baseline full frac=0.25] epoch 5/50 loss=0.28434 val_auc=0.57393 best=0.57393
+[baseline full frac=0.25] epoch 6/50 loss=0.13400 val_auc=0.66981 best=0.66981
+[baseline full frac=0.25] epoch 7/50 loss=0.10812 val_auc=0.71812 best=0.71812
+[baseline full frac=0.25] epoch 8/50 loss=0.10829 val_auc=0.68690 best=0.71812
+[baseline full frac=0.25] epoch 9/50 loss=0.10305 val_auc=0.63425 best=0.71812
+[baseline full frac=0.25] epoch 10/50 loss=0.10389 val_auc=0.68339 best=0.71812
+[baseline full frac=0.25] epoch 11/50 loss=0.09754 val_auc=0.74284 best=0.74284
+[baseline full frac=0.25] epoch 12/50 loss=0.09504 val_auc=0.73109 best=0.74284
+[baseline full frac=0.25] epoch 13/50 loss=0.09339 val_auc=0.77553 best=0.77553
+[baseline full frac=0.25] epoch 14/50 loss=0.08961 val_auc=0.77453 best=0.77553
+[baseline full frac=0.25] epoch 15/50 loss=0.08584 val_auc=0.81089 best=0.81089
+[baseline full frac=0.25] epoch 16/50 loss=0.08302 val_auc=0.82609 best=0.82609
+[baseline full frac=0.25] epoch 17/50 loss=0.08289 val_auc=0.82200 best=0.82609
+[baseline full frac=0.25] epoch 18/50 loss=0.08063 val_auc=0.82435 best=0.82609
+[baseline full frac=0.25] epoch 19/50 loss=0.07943 val_auc=0.83899 best=0.83899
+[baseline full frac=0.25] epoch 20/50 loss=0.07790 val_auc=0.82102 best=0.83899
+[baseline full frac=0.25] epoch 21/50 loss=0.07859 val_auc=0.83355 best=0.83899
+[baseline full frac=0.25] epoch 22/50 loss=0.07606 val_auc=0.83587 best=0.83899
+[baseline full frac=0.25] epoch 23/50 loss=0.07525 val_auc=0.85242 best=0.85242
+[baseline full frac=0.25] epoch 24/50 loss=0.07256 val_auc=0.84975 best=0.85242
+[baseline full frac=0.25] epoch 25/50 loss=0.07155 val_auc=0.83902 best=0.85242
+[baseline full frac=0.25] epoch 26/50 loss=0.07152 val_auc=0.84096 best=0.85242
+[baseline full frac=0.25] epoch 27/50 loss=0.07071 val_auc=0.84402 best=0.85242
+[baseline full frac=0.25] epoch 28/50 loss=0.06928 val_auc=0.85071 best=0.85242
+[baseline full frac=0.25] epoch 29/50 loss=0.06918 val_auc=0.83405 best=0.85242
+[baseline full frac=0.25] epoch 30/50 loss=0.07559 val_auc=0.83975 best=0.85242
+[baseline full frac=0.25] epoch 31/50 loss=0.07398 val_auc=0.85022 best=0.85242
+[baseline full frac=0.25] epoch 32/50 loss=0.07136 val_auc=0.85085 best=0.85242
+[baseline full frac=0.25] epoch 33/50 loss=0.07112 val_auc=0.84929 best=0.85242
+[baseline full frac=0.25] epoch 34/50 loss=0.06956 val_auc=0.84436 best=0.85242
+[baseline full frac=0.25] epoch 35/50 loss=0.06765 val_auc=0.84457 best=0.85242
+[baseline full frac=0.25] epoch 36/50 loss=0.06833 val_auc=0.84436 best=0.85242
+[baseline full frac=0.25] epoch 37/50 loss=0.06605 val_auc=0.85185 best=0.85242
+[baseline full frac=0.25] epoch 38/50 loss=0.06784 val_auc=0.85508 best=0.85508
+[baseline full frac=0.25] epoch 39/50 loss=0.06686 val_auc=0.85176 best=0.85508
+[baseline full frac=0.25] epoch 40/50 loss=0.06524 val_auc=0.85972 best=0.85972
+[baseline full frac=0.25] epoch 41/50 loss=0.06401 val_auc=0.85440 best=0.85972
+[baseline full frac=0.25] epoch 42/50 loss=0.06264 val_auc=0.85159 best=0.85972
+[baseline full frac=0.25] epoch 43/50 loss=0.06599 val_auc=0.85343 best=0.85972
+[baseline full frac=0.25] epoch 44/50 loss=0.06266 val_auc=0.85076 best=0.85972
+[baseline full frac=0.25] epoch 45/50 loss=0.06190 val_auc=0.84946 best=0.85972
+[baseline full frac=0.25] epoch 46/50 loss=0.06209 val_auc=0.85892 best=0.85972
+[baseline full frac=0.25] epoch 47/50 loss=0.06017 val_auc=0.85857 best=0.85972
+[baseline full frac=0.25] epoch 48/50 loss=0.06127 val_auc=0.85897 best=0.85972
+[baseline full frac=0.25] epoch 49/50 loss=0.06696 val_auc=0.85746 best=0.85972
+[baseline full frac=0.25] epoch 50/50 loss=0.06143 val_auc=0.85554 best=0.85972
+[baseline full frac=1.00] epoch 1/50 loss=0.79290 val_auc=0.52969 best=0.52969
+[baseline full frac=1.00] epoch 2/50 loss=0.50934 val_auc=0.59223 best=0.59223
+[baseline full frac=1.00] epoch 3/50 loss=0.17582 val_auc=0.70354 best=0.70354
+[baseline full frac=1.00] epoch 4/50 loss=0.10530 val_auc=0.76070 best=0.76070
+[baseline full frac=1.00] epoch 5/50 loss=0.09391 val_auc=0.81253 best=0.81253
+[baseline full frac=1.00] epoch 6/50 loss=0.08911 val_auc=0.82810 best=0.82810
+[baseline full frac=1.00] epoch 7/50 loss=0.08506 val_auc=0.82440 best=0.82810
+[baseline full frac=1.00] epoch 8/50 loss=0.08120 val_auc=0.83829 best=0.83829
+[baseline full frac=1.00] epoch 9/50 loss=0.07785 val_auc=0.85537 best=0.85537
+[baseline full frac=1.00] epoch 10/50 loss=0.07527 val_auc=0.86590 best=0.86590
+[baseline full frac=1.00] epoch 11/50 loss=0.07133 val_auc=0.86580 best=0.86590
+[baseline full frac=1.00] epoch 12/50 loss=0.06825 val_auc=0.87006 best=0.87006
+[baseline full frac=1.00] epoch 13/50 loss=0.06696 val_auc=0.87761 best=0.87761
+[baseline full frac=1.00] epoch 14/50 loss=0.06576 val_auc=0.88310 best=0.88310
+[baseline full frac=1.00] epoch 15/50 loss=0.06424 val_auc=0.88829 best=0.88829
+[baseline full frac=1.00] epoch 16/50 loss=0.06339 val_auc=0.88939 best=0.88939
+[baseline full frac=1.00] epoch 17/50 loss=0.06218 val_auc=0.88085 best=0.88939
+[baseline full frac=1.00] epoch 18/50 loss=0.06108 val_auc=0.89520 best=0.89520
+[baseline full frac=1.00] epoch 19/50 loss=0.06051 val_auc=0.89765 best=0.89765
+[baseline full frac=1.00] epoch 20/50 loss=0.05955 val_auc=0.89820 best=0.89820
+[baseline full frac=1.00] epoch 21/50 loss=0.05875 val_auc=0.90180 best=0.90180
+[baseline full frac=1.00] epoch 22/50 loss=0.05842 val_auc=0.91081 best=0.91081
+[baseline full frac=1.00] epoch 23/50 loss=0.05750 val_auc=0.90899 best=0.91081
+[baseline full frac=1.00] epoch 24/50 loss=0.05713 val_auc=0.90243 best=0.91081
+[baseline full frac=1.00] epoch 25/50 loss=0.05652 val_auc=0.90797 best=0.91081
+[baseline full frac=1.00] epoch 26/50 loss=0.05610 val_auc=0.90994 best=0.91081
+[baseline full frac=1.00] epoch 27/50 loss=0.05575 val_auc=0.91466 best=0.91466
+[baseline full frac=1.00] epoch 28/50 loss=0.05536 val_auc=0.91185 best=0.91466
+[baseline full frac=1.00] epoch 29/50 loss=0.05467 val_auc=0.92216 best=0.92216
+[baseline full frac=1.00] epoch 30/50 loss=0.05438 val_auc=0.91890 best=0.92216
+[baseline full frac=1.00] epoch 31/50 loss=0.05341 val_auc=0.91464 best=0.92216
+[baseline full frac=1.00] epoch 32/50 loss=0.05265 val_auc=0.92393 best=0.92393
+[baseline full frac=1.00] epoch 33/50 loss=0.05242 val_auc=0.92474 best=0.92474
+[baseline full frac=1.00] epoch 34/50 loss=0.05215 val_auc=0.92012 best=0.92474
+[baseline full frac=1.00] epoch 35/50 loss=0.05125 val_auc=0.92265 best=0.92474
+[baseline full frac=1.00] epoch 36/50 loss=0.05099 val_auc=0.91863 best=0.92474
+[baseline full frac=1.00] epoch 37/50 loss=0.04966 val_auc=0.92466 best=0.92474
+[baseline full frac=1.00] epoch 38/50 loss=0.04921 val_auc=0.92759 best=0.92759
+[baseline full frac=1.00] epoch 39/50 loss=0.04828 val_auc=0.92645 best=0.92759
+[baseline full frac=1.00] epoch 40/50 loss=0.04757 val_auc=0.92407 best=0.92759
+[baseline full frac=1.00] epoch 41/50 loss=0.04669 val_auc=0.92473 best=0.92759
+[baseline full frac=1.00] epoch 42/50 loss=0.04554 val_auc=0.92879 best=0.92879
+[baseline full frac=1.00] epoch 43/50 loss=0.04426 val_auc=0.93056 best=0.93056
+[baseline full frac=1.00] epoch 44/50 loss=0.04319 val_auc=0.92721 best=0.93056
+[baseline full frac=1.00] epoch 45/50 loss=0.04204 val_auc=0.92830 best=0.93056
+[baseline full frac=1.00] epoch 46/50 loss=0.04106 val_auc=0.92758 best=0.93056
+[baseline full frac=1.00] epoch 47/50 loss=0.04000 val_auc=0.92861 best=0.93056
+[baseline full frac=1.00] epoch 48/50 loss=0.03939 val_auc=0.92930 best=0.93056
+[baseline full frac=1.00] epoch 49/50 loss=0.03862 val_auc=0.93055 best=0.93056
+[baseline full frac=1.00] epoch 50/50 loss=0.03840 val_auc=0.92878 best=0.93056
+done
+[
+  {
+    "method": "baseline",
+    "ssl_method": null,
+    "seed": 22,
+    "fraction": 0.01,
+    "finetune_mode": "full",
+    "n_train_records": 174,
+    "best_val_macro_auc": 0.6551675200462341,
+    "final_val_macro_auc": 0.6551675200462341,
+    "test_macro_auc": 0.6178492307662964,
+    "pretrained_ckpt": null
+  },
+  {
+    "method": "baseline",
+    "ssl_method": null,
+    "seed": 22,
+    "fraction": 0.05,
+    "finetune_mode": "full",
+    "n_train_records": 872,
+    "best_val_macro_auc": 0.7860891819000244,
+    "final_val_macro_auc": 0.7860891819000244,
+    "test_macro_auc": 0.7801380157470703,
+    "pretrained_ckpt": null
+  },
+  {
+    "method": "baseline",
+    "ssl_method": null,
+    "seed": 22,
+    "fraction": 0.1,
+    "finetune_mode": "full",
+    "n_train_records": 1744,
+    "best_val_macro_auc": 0.8344009518623352,
+    "final_val_macro_auc": 0.8344009518623352,
+    "test_macro_auc": 0.8176665902137756,
+    "pretrained_ckpt": null
+  },
+  {
+    "method": "baseline",
+    "ssl_method": null,
+    "seed": 22,
+    "fraction": 0.25,
+    "finetune_mode": "full",
+    "n_train_records": 4360,
+    "best_val_macro_auc": 0.8597162365913391,
+    "final_val_macro_auc": 0.8597162365913391,
+    "test_macro_auc": 0.8377105593681335,
+    "pretrained_ckpt": null
+  },
+  {
+    "method": "baseline",
+    "ssl_method": null,
+    "seed": 22,
+    "fraction": 1.0,
+    "finetune_mode": "full",
+    "n_train_records": 17441,
+    "best_val_macro_auc": 0.9305570721626282,
+    "final_val_macro_auc": 0.9305570721626282,
+    "test_macro_auc": 0.9264869093894958,
+    "pretrained_ckpt": null
+  }
+]
