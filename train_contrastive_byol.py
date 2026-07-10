@@ -26,7 +26,7 @@ SSL_METHOD = "byol"
 DATASET_SSL_METHOD = "contrastive"
 
 
-DATA_DIR = "/kaggle/input/datasets/deltasierra0/ptb-xl-100hz/ptb-xl_100hz"
+DATA_DIR = "/kaggle/input/datasets/deepshiksharma/ptb-xl-100hz/ptb-xl_100hz"
 
 TASK = "diagnostic"
 

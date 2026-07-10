@@ -21,7 +21,7 @@ SEED = int(sys.argv[1])
 
 METHOD = "baseline"
 
-DATA_DIR = "ptb-xl_100hz"
+DATA_DIR = "/kaggle/input/datasets/deepshiksharma/ptb-xl-100hz/ptb-xl_100hz"
 
 TASK = "diagnostic"
 
