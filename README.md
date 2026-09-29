@@ -2,7 +2,7 @@
 
 ## Overview
 
-Foundation-scale ECG pretraining works, but its data and compute requirements are out of reach in many research settings. Our asks a narrower question: **which benefits of the pretrain-and-adapt paradigm survive when pretraining is deliberately restricted to one public dataset, one backbone, and one downstream task?**
+Foundation-scale ECG pretraining works, but its data and compute requirements are out of reach in many research settings. We asks a narrower question, **which benefits of the pretrain-and-adapt paradigm survive when pretraining is deliberately restricted to one public dataset, one backbone, and one downstream task?**
 
 We run a controlled comparison of four self-supervised objectives for 12-lead ECG diagnostic classification on the PTB-XL dataset:
 
@@ -18,12 +18,12 @@ Every method shares the same `xresnet1d101` backbone, data split, input pipeline
 
 ## Headline finding
 
-Under data and model constraints, SSL initialization does *not* reliably beat a strong supervised baseline when the entire model is fine-tuned. The gains appear when the pretrained encoder is **frozen** and only the classifier head is trained.
+Under data and model constraints, SSL initialization does <u>*not*</u> reliably beat a strong supervised baseline when the entire model is fine-tuned. The gains appear when the pretrained encoder is **frozen** and only the classifier head is trained.
 
 At 1% labels, every frozen SSL encoder outperforms the baseline. In scarce-label conditions, switching the adaptation protocol appears to matter more than switching the SSL pretraining objective.
 
 <br> <p align="center">
-    <img src="figures/best_ssl_gain.png" width="600"/>
+    <img src="figures/best_ssl_gain.png" width="480"/>
     <br> <sub> Best-performing SSL method within each adaptation protocol at each label fraction, shown as mean macro AUROC gain relative to the supervised baseline. Marker shape indicates the adaptation protocol and marker color indicates the SSL pretraining objective. </sub>
 </p> <br>
 
@@ -83,7 +83,7 @@ DATA_DIR = "/kaggle/input/datasets/deepshiksharma/ptb-xl-100hz/ptb-xl_100hz"
 ```
 Point this at your PTB-XL directory path before running.
 
-Note: On first use, `load_ptbxl_raw100()` reads all 21,837 records with `wfdb` and caches them as a single `raw100.npy` array (~1 GB float32) so later runs skip the per-record read. `cache_dir` defaults to `/kaggle/working` and should also be changed for local use.
+> Note: On first use, `load_ptbxl_raw100()` reads all 21,837 records with `wfdb` and caches them as a single `raw100.npy` array (~1 GB float32) so later runs skip the per-record read. `cache_dir` defaults to `/kaggle/working` and should also be changed for local use.
 
 
 ## Reproducing the experiments
@@ -129,22 +129,59 @@ byol_seed22/
     └── {001,005,010,025,100}pct/     # same as for finetune_full/
 ```
 
+
 ## Experimental configuration
 
-| | |
-| --- | --- |
-| Dataset | PTB-XL 100 Hz, diagnostic multilabel task (44 labels) |
-| Split | Official PTB-XL folds: 1–8 train (17,441), 9 val (2,193), 10 test (2,203) |
-| Backbone | `xresnet1d101`, expansion 4, layers [3, 4, 23, 3], kernel size 5, ~1.8 M encoder parameters |
-| Embedding | Adaptive concat (max + avg) pooling → 512-d |
-| Head | BN → dropout(0.5) → 512×128 → ReLU → BN → dropout → 128×44 |
-| Input (train) | One random 2.5 s crop per record → `(12, 250)` |
-| Input (eval) | Overlapping 2.5 s chunks, stride 125; record-level score = per-class max over chunks |
-| Label fractions | 1%, 5%, 10%, 25%, 100% (seeded permutation of the training folds) |
-| Metric | Test macro AUROC over 44 labels; classes absent from a split are skipped via `nanmean` |
-| Model selection | Highest validation macro AUROC checkpoint |
-| Seeds | 22, 54, 71 — results reported as mean ± SD |
-| Optimization | AdamW with a OneCycle schedule throughout.
+<table>
+  <tr>
+    <td>Dataset</td>
+    <td>PTB-XL 100 Hz, diagnostic multilabel task (44 labels)</td>
+  </tr>
+  <tr>
+    <td>Split</td>
+    <td>Official PTB-XL folds: 1–8 train (17,441), 9 val (2,193), 10 test (2,203)</td>
+  </tr>
+  <tr>
+    <td>Backbone</td>
+    <td><code>xresnet1d101</code>, expansion 4, layers [3, 4, 23, 3], kernel size 5, ~1.8 M encoder parameters</td>
+  </tr>
+  <tr>
+    <td>Embedding</td>
+    <td>Adaptive concat (max + avg) pooling → 512-d</td>
+  </tr>
+  <tr>
+    <td>Head</td>
+    <td>BN → dropout(0.5) → 512×128 → ReLU → BN → dropout → 128×44</td>
+  </tr>
+  <tr>
+    <td>Input (train)</td>
+    <td>One random 2.5 s crop per record → <code>(12, 250)</code></td>
+  </tr>
+  <tr>
+    <td>Input (eval)</td>
+    <td>Overlapping 2.5 s chunks, stride 125; record-level score = per-class max over chunks</td>
+  </tr>
+  <tr>
+    <td>Label fractions</td>
+    <td>1%, 5%, 10%, 25%, 100% (seeded permutation of the training folds)</td>
+  </tr>
+  <tr>
+    <td>Metric</td>
+    <td>Test macro AUROC over 44 labels; classes absent from a split are skipped via <code>nanmean</code></td>
+  </tr>
+  <tr>
+    <td>Model selection</td>
+    <td>Highest validation macro AUROC checkpoint</td>
+  </tr>
+  <tr>
+    <td>Seeds</td>
+    <td>22, 54, 71 — results reported as mean ± SD</td>
+  </tr>
+  <tr>
+    <td>Optimization</td>
+    <td>AdamW with a OneCycle schedule throughout.</td>
+  </tr>
+</table>
 
 | Stage | Epochs | Batch | LR | Weight decay |
 | --- | --- | --- | --- | --- |
@@ -153,7 +190,7 @@ byol_seed22/
 | Head-only fine-tuning | 50 | 128 | 1e-2 | 1e-2 |
 | Supervised baseline | 50 | 128 | 1e-2 | 1e-2 |
 
-Note: The higher head-only learning rate exists to let a randomly initialized head converge on top of a frozen encoder.
+> Note: The higher head-only learning rate exists to let a randomly initialized head converge on top of a frozen encoder.
 
 ---
 
@@ -163,7 +200,7 @@ Note: The higher head-only learning rate exists to let a randomly initialized he
 - **Denoising**: Additive Gaussian noise (σ = 0.075) over all leads and timepoints; loss computed over the full crop. Optional lead dropout is available but disabled (`denoise_lead_dropout_prob = 0.0`).
 - **SimCLR / BYOL**: Identical two-view augmentation pipeline, applied in a fixed order. Amplitude scaling (0.8–1.2), temporal shift (±25 samples, zero fill), Gaussian noise (σ = 0.05), temporal patch masking (20% of patches), lead dropout (p = 0.15). SimCLR uses NT-Xent at temperature 0.2; BYOL uses the symmetric negative-cosine loss with EMA momentum 0.996, updating target buffers as well as parameters.
 
-Pretraining uses just the signal waveforms. No labels are touched.
+> Pretraining uses just the signal waveforms. No labels are touched.
 
 
 ## Results
@@ -200,7 +237,7 @@ Test macro AUROC, mean ± SD over three seeds. "Full" is full model fine-tuning;
 </table>
 </p> <br>
 
-Note: These experiments did not measure representation drift, so the weak full model fine-tuning results are consistent with overfitting or overwriting of pretrained features rather than evidence for either mechanism. Conclusions are limited to PTB-XL diagnostic classification with `xresnet1d101`. Cross-dataset transfer, additional downstream tasks, and larger architectures are not evaluated.
+> Note: These experiments did not measure representation drift, so the weak full model fine-tuning results are consistent with overfitting or overwriting of pretrained features rather than evidence for either mechanism. Conclusions are limited to PTB-XL diagnostic classification with `xresnet1d101`. Cross-dataset transfer, additional downstream tasks, and larger architectures are not evaluated.
 
 ---
 
