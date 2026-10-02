@@ -1,6 +1,6 @@
-torch==
-numpy==
-pandas==
-scikit-learn==
-wfdb==
-nvidia-ml-py==
+torch==2.10.0+cu128
+numpy==2.0.2
+pandas==2.3.3
+scikit-learn==1.6.1
+wfdb==4.3.1
+nvidia-ml-py==13.595.45
