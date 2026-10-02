@@ -375,19 +375,31 @@ class PTBXLCropDataset(Dataset):
         raise RuntimeError("Invalid dataset mode")
 
 
-def load_ptbxl_raw100(data_dir, cache_dir="/kaggle/working"):
-    data_dir = Path(data_dir)
-    cache_dir = Path(cache_dir)
-    cache_dir.mkdir(parents=True, exist_ok=True)
+def load_ptbxl_raw100(data_dir, cache_dir=None):
+    """
+    returns x: (21837, 1000, 12) float32 in mV (no filtering, no standardization), and db.
 
-    cache_path = cache_dir / "raw100.npy"
+    the waveforms are read once with wfdb and cached as raw100.npy. lookup order:
+        1. <data_dir>/raw100.npy   (e.g. uploaded alongside the dataset on Kaggle)
+        2. <cache_dir>/raw100.npy  (cache_dir defaults to ./cache)
+    otherwise the cache is built in cache_dir.
+    """
+
+    data_dir = Path(data_dir)
+    cache_dir = Path(cache_dir) if cache_dir is not None else Path.cwd() / "cache"
 
     db = pd.read_csv(data_dir / "ptbxl_database.csv", index_col="ecg_id")
     db["scp_codes"] = db["scp_codes"].apply(ast.literal_eval)
 
-    if cache_path.exists():
-        x = np.load(cache_path)
-        return x, db
+    for cache_path in (data_dir / "raw100.npy", cache_dir / "raw100.npy"):
+        if cache_path.exists():
+            x = np.load(cache_path)
+
+            if len(x) != len(db):
+                raise ValueError(f"{cache_path} has {len(x)} records but ptbxl_database.csv has {len(db)}")
+
+            print("loaded cached waveforms:", cache_path)
+            return x, db
 
     records = []
 
@@ -396,7 +408,9 @@ def load_ptbxl_raw100(data_dir, cache_dir="/kaggle/working"):
         records.append(signal.astype(np.float32))
 
     x = np.stack(records).astype(np.float32)
-    np.save(cache_path, x)
+
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    np.save(cache_dir / "raw100.npy", x)
 
     return x, db
 
@@ -469,12 +483,20 @@ def get_labels(data_dir, db, task="diagnostic"):
     return y, label_names
 
 
-def split_by_fold(x, y, db):
+def get_split_indices(db):
+    """official PTB-XL split: strat_fold 1-8 train, 9 validation, 10 test (patient-disjoint)"""
+
     folds = db["strat_fold"].values
 
     train_idx = np.where(folds <= 8)[0]
     val_idx = np.where(folds == 9)[0]
     test_idx = np.where(folds == 10)[0]
+
+    return train_idx, val_idx, test_idx
+
+
+def split_by_fold(x, y, db):
+    train_idx, val_idx, test_idx = get_split_indices(db)
 
     return (
         x[train_idx], y[train_idx],
