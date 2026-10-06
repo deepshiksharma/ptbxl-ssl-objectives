@@ -29,4 +29,4 @@ consistency:
 
 collected 465 runs from 15 sessions, seeds [22, 54, 71]
 no problems found
-wrote ..\training runs\analysis_out\runs.csv
+wrote output\runs.csv
