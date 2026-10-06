@@ -1,0 +1,23 @@
+pretraining, per objective (mean +- SD over seeds)
+                    time (h)         s/epoch   peak mem (GB)    energy (kWh)     power (W)  trainable (M)  fwd GFLOPs  train PFLOPs
+Masking         1.11 +- 0.05     39.9 +- 1.8    2.16 +- 0.00  0.072 +- 0.003          64.7           2.13       0.243           1.3
+Denoising       1.13 +- 0.04     40.7 +- 1.5    2.16 +- 0.00  0.073 +- 0.002          64.2           2.13       0.243           1.3
+SimCLR          1.91 +- 0.09     68.7 +- 3.3    2.47 +- 0.00  0.123 +- 0.005          64.4           1.97       0.165           0.9
+BYOL            2.01 +- 0.07     72.1 +- 2.6    2.48 +- 0.00  0.130 +- 0.004          64.6           2.04       0.330           1.7
+
+downstream, mean per run (over objectives, seeds and encoder LRs)
+                                    1%                    5%                   10%                   25%                  100%
+                         min | GB | Wh         min | GB | Wh         min | GB | Wh         min | GB | Wh         min | GB | Wh
+scratch full          1.7 | 2.59 | 1.8      2.8 | 2.62 | 3.0      4.1 | 2.66 | 4.4      8.0 | 2.78 | 8.7    27.7 | 3.36 | 30.2
+SSL frozen            1.5 | 0.56 | 1.6      1.6 | 0.59 | 1.7      1.6 | 0.63 | 1.8      1.9 | 0.75 | 2.0      3.2 | 1.33 | 3.4
+SSL partial           1.5 | 0.56 | 1.6      1.6 | 0.59 | 1.7      1.7 | 0.63 | 1.8      2.0 | 0.75 | 2.1      3.5 | 1.34 | 3.8
+SSL full              1.8 | 2.59 | 1.9      2.9 | 2.62 | 3.1      4.2 | 2.66 | 4.5      8.3 | 2.78 | 9.0    28.7 | 3.36 | 31.1
+trainable parameters per downstream run: scratch full 1877k, SSL frozen 73k, SSL partial 235k, SSL full 1877k
+downstream network: encoder 1.80M parameters, last stage 162k, head 72.6k, forward 82.3 MFLOPs per 2.5 s crop
+
+totals (GPU time inside the training loops; excludes data loading and notebook overhead):
+  pretraining: 12 runs, 18.5 GPU-h, 1.19 kWh
+  downstream:  465 runs, 42.3 GPU-h, 2.74 kWh
+  whole study: 60.8 GPU-h, 3.93 kWh
+  one SSL objective and seed: pretraining 1.54 h + downstream grid 2.97 h = 4.51 h
+  GPUs: Tesla T4 | energy measured by: nvml_counter

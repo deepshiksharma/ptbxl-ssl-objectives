@@ -1,0 +1,16 @@
+% requires \usepackage{booktabs}
+\begin{table}[t]
+\centering
+\caption{Pretraining cost per objective (100 epochs, mean over 3 seeds, one Tesla T4). Parameters used during pretraining, forward FLOPs per training sample, wall-clock time, peak GPU memory, and GPU energy measured with NVML.}
+\label{tab:compute}
+\begin{tabular}{lccccc}
+\toprule
+Objective & Params (M) & GFLOPs & Time (h) & Memory (GB) & Energy (kWh) \\
+\midrule
+Masking & 2.13 & 0.24 & 1.11 & 2.16 & 0.07 \\
+Denoising & 2.13 & 0.24 & 1.13 & 2.16 & 0.07 \\
+SimCLR & 1.97 & 0.16 & 1.91 & 2.47 & 0.12 \\
+BYOL & 2.04 & 0.33 & 2.01 & 2.48 & 0.13 \\
+\bottomrule
+\end{tabular}
+\end{table}

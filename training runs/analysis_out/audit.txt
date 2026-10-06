@@ -1,0 +1,32 @@
+runs dir: ..\training runs\unzipped
+task: diagnostic
+
+sessions:
+  baseline_seed22    15/15 runs
+  baseline_seed54    15/15 runs
+  baseline_seed71    15/15 runs
+  mask_seed22        35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  mask_seed54        35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  mask_seed71        35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  denoise_seed22     35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  denoise_seed54     35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  denoise_seed71     35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  simclr_seed22      35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  simclr_seed54      35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  simclr_seed71      35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  byol_seed22        35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  byol_seed54        35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+  byol_seed71        35/35 runs | pretraining epochs 100/100 | encoder checksum matches
+
+consistency:
+  validation/test labels identical across all 15 sessions
+  seed 22: identical labeled subsets across 5 methods, sizes {'001pct': 173, '005pct': 869, '010pct': 1742, '025pct': 4348, '100pct': 17441}
+  seed 54: identical labeled subsets across 5 methods, sizes {'001pct': 173, '005pct': 870, '010pct': 1741, '025pct': 4355, '100pct': 17441}
+  seed 71: identical labeled subsets across 5 methods, sizes {'001pct': 173, '005pct': 868, '010pct': 1739, '025pct': 4360, '100pct': 17441}
+  labels evaluated on test: [44]
+  GPUs: Tesla T4
+  energy measured by: nvml_counter
+
+collected 465 runs from 15 sessions, seeds [22, 54, 71]
+no problems found
+wrote ..\training runs\analysis_out\runs.csv

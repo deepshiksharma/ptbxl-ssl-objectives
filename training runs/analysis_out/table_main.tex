@@ -1,0 +1,49 @@
+% requires \usepackage{booktabs} and \usepackage{multirow}
+\begin{table*}[t]
+\centering
+\caption{Test macro AUROC and macro AUPRC on PTB-XL diagnostic classification (44 labels), mean $\pm$ standard deviation over 3 seeds. For partial and full fine-tuning, the encoder learning rate is selected per label fraction by mean validation macro AUROC. The best mean in each column (to three decimals) is in bold.}
+\label{tab:results}
+\begin{tabular}{llccccc}
+\toprule
+\multicolumn{2}{l}{\textit{Macro AUROC}} & 1\% & 5\% & 10\% & 25\% & 100\% \\
+\midrule
+Scratch & Full & 0.652 $\pm$ 0.040 & 0.780 $\pm$ 0.008 & 0.823 $\pm$ 0.008 & 0.855 $\pm$ 0.014 & 0.929 $\pm$ 0.002 \\
+\midrule
+\multirow{3}{*}{Masking} & Frozen & 0.722 $\pm$ 0.024 & 0.803 $\pm$ 0.006 & 0.817 $\pm$ 0.008 & 0.852 $\pm$ 0.008 & 0.879 $\pm$ 0.002 \\
+ & Partial & 0.713 $\pm$ 0.025 & 0.801 $\pm$ 0.002 & 0.822 $\pm$ 0.006 & 0.851 $\pm$ 0.008 & 0.887 $\pm$ 0.001 \\
+ & Full & 0.720 $\pm$ 0.008 & 0.815 $\pm$ 0.005 & 0.838 $\pm$ 0.005 & 0.872 $\pm$ 0.016 & \textbf{0.931 $\pm$ 0.003} \\
+\midrule
+\multirow{3}{*}{Denoising} & Frozen & 0.688 $\pm$ 0.016 & 0.784 $\pm$ 0.008 & 0.818 $\pm$ 0.012 & 0.847 $\pm$ 0.009 & 0.880 $\pm$ 0.002 \\
+ & Partial & 0.704 $\pm$ 0.021 & 0.788 $\pm$ 0.003 & 0.822 $\pm$ 0.006 & 0.860 $\pm$ 0.004 & 0.892 $\pm$ 0.005 \\
+ & Full & 0.725 $\pm$ 0.007 & 0.804 $\pm$ 0.001 & 0.837 $\pm$ 0.008 & 0.875 $\pm$ 0.011 & 0.930 $\pm$ 0.003 \\
+\midrule
+\multirow{3}{*}{SimCLR} & Frozen & 0.709 $\pm$ 0.008 & 0.806 $\pm$ 0.004 & 0.833 $\pm$ 0.004 & 0.860 $\pm$ 0.009 & 0.880 $\pm$ 0.002 \\
+ & Partial & 0.712 $\pm$ 0.006 & 0.800 $\pm$ 0.010 & 0.834 $\pm$ 0.012 & 0.853 $\pm$ 0.014 & 0.889 $\pm$ 0.003 \\
+ & Full & 0.715 $\pm$ 0.022 & \textbf{0.820 $\pm$ 0.020} & \textbf{0.855 $\pm$ 0.011} & \textbf{0.878 $\pm$ 0.015} & 0.930 $\pm$ 0.004 \\
+\midrule
+\multirow{3}{*}{BYOL} & Frozen & \textbf{0.773 $\pm$ 0.004} & 0.812 $\pm$ 0.009 & 0.827 $\pm$ 0.009 & 0.856 $\pm$ 0.010 & 0.881 $\pm$ 0.006 \\
+ & Partial & 0.770 $\pm$ 0.002 & 0.815 $\pm$ 0.007 & 0.831 $\pm$ 0.009 & 0.858 $\pm$ 0.003 & 0.893 $\pm$ 0.005 \\
+ & Full & 0.757 $\pm$ 0.004 & 0.810 $\pm$ 0.011 & 0.848 $\pm$ 0.013 & \textbf{0.878 $\pm$ 0.016} & \textbf{0.931 $\pm$ 0.004} \\
+\midrule
+\multicolumn{2}{l}{\textit{Macro AUPRC}} & 1\% & 5\% & 10\% & 25\% & 100\% \\
+\midrule
+Scratch & Full & 0.071 $\pm$ 0.006 & 0.133 $\pm$ 0.013 & 0.178 $\pm$ 0.005 & 0.212 $\pm$ 0.011 & 0.351 $\pm$ 0.009 \\
+\midrule
+\multirow{3}{*}{Masking} & Frozen & 0.115 $\pm$ 0.016 & 0.160 $\pm$ 0.009 & 0.175 $\pm$ 0.002 & 0.194 $\pm$ 0.005 & 0.228 $\pm$ 0.006 \\
+ & Partial & 0.115 $\pm$ 0.011 & 0.158 $\pm$ 0.011 & 0.179 $\pm$ 0.004 & 0.203 $\pm$ 0.005 & 0.258 $\pm$ 0.004 \\
+ & Full & 0.110 $\pm$ 0.004 & 0.171 $\pm$ 0.002 & 0.196 $\pm$ 0.001 & 0.235 $\pm$ 0.020 & \textbf{0.358 $\pm$ 0.004} \\
+\midrule
+\multirow{3}{*}{Denoising} & Frozen & 0.089 $\pm$ 0.005 & 0.148 $\pm$ 0.004 & 0.178 $\pm$ 0.003 & 0.206 $\pm$ 0.006 & 0.244 $\pm$ 0.003 \\
+ & Partial & 0.087 $\pm$ 0.004 & 0.147 $\pm$ 0.006 & 0.187 $\pm$ 0.007 & 0.212 $\pm$ 0.009 & 0.259 $\pm$ 0.016 \\
+ & Full & 0.101 $\pm$ 0.005 & 0.181 $\pm$ 0.003 & 0.209 $\pm$ 0.014 & \textbf{0.252 $\pm$ 0.012} & 0.352 $\pm$ 0.011 \\
+\midrule
+\multirow{3}{*}{SimCLR} & Frozen & 0.123 $\pm$ 0.006 & 0.178 $\pm$ 0.005 & 0.193 $\pm$ 0.005 & 0.233 $\pm$ 0.009 & 0.258 $\pm$ 0.007 \\
+ & Partial & 0.127 $\pm$ 0.007 & 0.174 $\pm$ 0.003 & 0.198 $\pm$ 0.004 & 0.239 $\pm$ 0.006 & 0.261 $\pm$ 0.003 \\
+ & Full & 0.125 $\pm$ 0.010 & \textbf{0.189 $\pm$ 0.007} & \textbf{0.212 $\pm$ 0.009} & 0.246 $\pm$ 0.019 & 0.355 $\pm$ 0.014 \\
+\midrule
+\multirow{3}{*}{BYOL} & Frozen & 0.125 $\pm$ 0.002 & 0.171 $\pm$ 0.003 & 0.184 $\pm$ 0.006 & 0.217 $\pm$ 0.018 & 0.244 $\pm$ 0.005 \\
+ & Partial & 0.128 $\pm$ 0.004 & 0.176 $\pm$ 0.007 & 0.191 $\pm$ 0.005 & 0.214 $\pm$ 0.001 & 0.262 $\pm$ 0.014 \\
+ & Full & \textbf{0.131 $\pm$ 0.006} & 0.182 $\pm$ 0.004 & 0.207 $\pm$ 0.012 & 0.246 $\pm$ 0.015 & \textbf{0.358 $\pm$ 0.014} \\
+\bottomrule
+\end{tabular}
+\end{table*}

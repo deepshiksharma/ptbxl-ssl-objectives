@@ -1,0 +1,42 @@
+seeds [22, 54, 71], objectives ['mask', 'denoise', 'simclr', 'byol']; values are means over objectives and seeds
+
+CKA to the pretrained encoder, embedding, BatchNorm recalibrated (weights only)
+                            1%      5%     10%     25%    100%
+partial enc 1e-04        1.000   1.000   1.000   1.000   0.994
+partial enc 1e-03        0.999   0.998   0.995   0.989   0.934
+partial enc 1e-02        0.975   0.945   0.894   0.909   0.786
+full enc 1e-04           0.890   0.693   0.661   0.556   0.408
+full enc 1e-03           0.388   0.207   0.262   0.214   0.143
+full enc 1e-02           0.028   0.020   0.031   0.090   0.118
+
+CKA to the pretrained encoder, embedding, as logged (weights + BatchNorm statistics)
+                            1%      5%     10%     25%    100%
+partial enc 1e-04        0.999   0.999   0.999   0.999   0.996
+partial enc 1e-03        0.999   0.999   0.997   0.992   0.967
+partial enc 1e-02        0.985   0.979   0.967   0.965   0.937
+full enc 1e-04           0.732   0.542   0.573   0.467   0.346
+full enc 1e-03           0.409   0.197   0.216   0.202   0.113
+full enc 1e-02           0.022   0.021   0.018   0.067   0.070
+
+CKA to the pretrained encoder, stage 4, BatchNorm recalibrated
+                            1%      5%     10%     25%    100%
+partial enc 1e-04        1.000   1.000   1.000   0.999   0.978
+partial enc 1e-03        0.999   0.994   0.982   0.967   0.868
+partial enc 1e-02        0.955   0.912   0.857   0.861   0.769
+full enc 1e-04           0.940   0.790   0.757   0.662   0.472
+full enc 1e-03           0.477   0.253   0.305   0.246   0.167
+full enc 1e-02           0.039   0.035   0.038   0.092   0.120
+
+relative weight distance ||w - w0|| / ||w0||, whole encoder
+                            1%      5%     10%     25%    100%
+partial enc 1e-04        0.001   0.001   0.002   0.003   0.020
+partial enc 1e-03        0.007   0.011   0.018   0.028   0.101
+partial enc 1e-02        0.063   0.084   0.122   0.172   0.461
+full enc 1e-04           0.003   0.005   0.008   0.014   0.044
+full enc 1e-03           0.025   0.038   0.052   0.079   0.190
+full enc 1e-02           0.213   0.276   0.316   0.462   0.728
+
+reference CKA (embedding, BatchNorm recalibrated), mean over seeds / seed pairs:
+  pretrained_vs_pretrained_other_seed    Masking 0.317  Denoising 0.624  SimCLR 0.971  BYOL 0.483
+  pretrained_vs_random_init              Masking 0.026  Denoising 0.001  SimCLR 0.043  BYOL 0.128
+
